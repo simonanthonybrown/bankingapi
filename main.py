@@ -46,4 +46,4 @@ def fetch_balance(account_num: int, sort_code: int):
 
     account_balance = session.scalars(statement).all()
 
-    return account_balance
+    return account_balance[0]
