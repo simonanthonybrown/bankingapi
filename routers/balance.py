@@ -1,5 +1,5 @@
 import logging
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from models import Account
@@ -40,5 +40,11 @@ def fetch_balance(account_num: int, sort_code: int):
     )
 
     account_balance = session.scalars(statement).all()
+
+    if len(account_balance) == 0:
+        raise HTTPException(
+            status_code=404,
+            detail="Error 404: Account not found, please double check account number and sort code."  # noqa: E501 pylint: disable=line-too-long
+        )
 
     return f'Balance available: £{account_balance[0]}'
