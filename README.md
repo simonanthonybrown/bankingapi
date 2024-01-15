@@ -10,6 +10,8 @@ It was a real challenge figuring out how to fit the pieces together and to write
 
 Future implementations would involve the inclusion of FastAPI's built in OAuth2 for authorizing users before they gain access to any of the API's features. It would also be good to get the time to add the ability to view previous transactions for an account.
 
+The main next step would be to implement some integration testing using Starlette to mock HTTP requests and ensure that the API is returning the exptected responses from those requests.
+
 # Running the API
 
 ## Option 1: Docker local
