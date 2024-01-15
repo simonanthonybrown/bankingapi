@@ -33,6 +33,7 @@ def fetch_balance(account_num: int, sort_code: int):
     Session.configure(bind=engine)
     session = Session()
 
+    # SQL statement using the SQLAlchemy account model set up in models.py
     statement = (
         select(Account.balance)
         .where(Account.account_num == account_num)
@@ -41,10 +42,11 @@ def fetch_balance(account_num: int, sort_code: int):
 
     account_balance = session.scalars(statement).all()
 
+    # If account balance list is empty then account is not in the DB
     if len(account_balance) == 0:
         raise HTTPException(
             status_code=404,
-            detail="Error 404: Account not found, please double check account number and sort code."  # noqa: E501 pylint: disable=line-too-long
+            detail="Error 404: Account not found, please double check account number and sort code."
         )
 
     return f'Balance available: £{account_balance[0]}'
