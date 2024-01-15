@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir --upgrade -r ./banking_api/requirements.txt
 
 COPY ./app /banking_api/app
 
-RUN python banking_api/app/db_create.py
+RUN python ./app/db_create.py
 
-RUN uvicorn app.main:app --host 0.0.0.0 --port 30004
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "30004"]
