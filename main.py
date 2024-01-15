@@ -1,7 +1,7 @@
 """Main FastAPI module code for Banking API"""
 import logging
 from fastapi import FastAPI
-from routers import balance
+from routers import balance, transfer
 
 # Enable logging for the file
 logging.basicConfig(
@@ -18,6 +18,7 @@ app = FastAPI()
 
 # Call in routers for the module
 app.include_router(balance.router)
+app.include_router(transfer.router)
 
 # Route to check that FastAPI is running on Uvicorn boot
 @app.get("/")
