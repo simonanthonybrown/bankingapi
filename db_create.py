@@ -27,3 +27,4 @@ con.commit()
 # Check that values were entered into the db
 result = cur.execute("SELECT account_num FROM accounts")
 print(result.fetchall())
+print("Test DB successfully created")
