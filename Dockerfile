@@ -10,4 +10,4 @@ COPY ./app /banking_api/app
 
 RUN python ./app/db_create.py
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "30004"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
