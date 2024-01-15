@@ -1,7 +1,7 @@
 """Main FastAPI module code for Banking API"""
 import logging
 from fastapi import FastAPI
-from routers import balance, transfer
+from app.routers import balance, transfer
 
 # Enable logging for the file
 logging.basicConfig(

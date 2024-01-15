@@ -10,4 +10,4 @@ COPY .app /banking_api/app
 
 RUN python banking_api/app/db_create.py
 
-RUN uvicorn main:app --reload --port 30004
+RUN uvicorn app.main:app --host 0.0.0.0 --port 30004

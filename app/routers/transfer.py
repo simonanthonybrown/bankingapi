@@ -2,7 +2,7 @@ import logging
 from fastapi import APIRouter, HTTPException
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
-from models import Account
+from app.models import Account
 
 # Set up formatting for logging
 logging.basicConfig(
