@@ -6,7 +6,7 @@ COPY ./requirements.txt ./banking_api/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r ./banking_api/requirements.txt
 
-COPY .app /banking_api/app
+COPY ./app /banking_api/app
 
 RUN python banking_api/app/db_create.py
 
