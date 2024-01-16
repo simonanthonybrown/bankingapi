@@ -14,6 +14,24 @@ The main next step would be to implement some integration testing using Starlett
 
 # Running the API
 
+## Account values to use in this example
+
+This API uses a mocked database using SQLite. There are four mocked bank accounts and their details are listed below:
+
+Account 1: 
+Account num = 82041626, sort code = 927837, userid = 'KL9283', starting balance = 11500.23
+
+Account 2:
+Account num = 64736641, sort code = 560743, userid = 'SY6627', starting balance = 543.65
+
+Account 3:
+Account num = 70231442, sort code = 463782, userid = 'PK2873', starting balance = 8954.92
+
+Account 4:
+Account num = 44893061, sort code = 937478, userid = 'WE7112', starting balance = 34534.87
+
+Please use these values while testing the functionality of the API.
+
 ## Option 1: Docker local
 
 1. Navigate to the root of the project ./baking_api and use the included Dockerfile to build a docker image: `docker build -t <imagename> .`
