@@ -48,5 +48,7 @@ def fetch_balance(account_num: int, sort_code: int):
             status_code=404,
             detail="Error 404: Account not found, please double check account number and sort code."
         )
+    
+    session.close()
 
     return f'Balance available: £{account_balance[0]}'
